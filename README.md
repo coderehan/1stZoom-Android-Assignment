@@ -1,4 +1,4 @@
-<h2> FitPeo Android Assignment</h2>
+<h2> 1stZoom Android Assignment</h2>
 
 <b>Problem Statement:</b>
 
