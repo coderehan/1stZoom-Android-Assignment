@@ -3,10 +3,11 @@ package com.rehan.trackfavgithubrepo.activities
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -14,7 +15,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.rehan.trackfavgithubrepo.R
 import com.rehan.trackfavgithubrepo.adapters.TrackFavGithubRepoAdapter
 import com.rehan.trackfavgithubrepo.databinding.ActivityMainBinding
-import com.rehan.trackfavgithubrepo.models.TrackFavGithubRepoDTOResponse
 import com.rehan.trackfavgithubrepo.models.TrackFavGithubRepoResponse
 import com.rehan.trackfavgithubrepo.viewmodels.TrackFavGithubRepoViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -33,14 +33,12 @@ class MainActivity : AppCompatActivity() {
         favGithubRepoViewModel = ViewModelProvider(this)[TrackFavGithubRepoViewModel::class.java]
 
         setupRecyclerView()
-        bindObservers()
         onFavGithubRepoClick()
     }
 
     // This function will take the user to particular github repo link in browser
     private fun onFavGithubRepoClick() {
         favGithubRepoAdapter.onItemClick = {
-            Log.d("TAG", "onFavGithubRepoClick: " + it)
             val result = Intent(Intent.ACTION_VIEW,  Uri.parse(it))
             startActivity(Intent(result))
             }
@@ -67,12 +65,31 @@ class MainActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = favGithubRepoAdapter
         }
+        bindObservers()
     }
 
     private fun bindObservers() {
         favGithubRepoViewModel.getAllFavGithubRepoData(applicationContext)?.observe(this, Observer {
-            favGithubRepoAdapter.setData(it as ArrayList<TrackFavGithubRepoResponse>)
+            if (it.isEmpty()){
+                binding.tvLabel.visibility = View.VISIBLE
+                binding.btnAdd.visibility = View.VISIBLE
+                binding.btnAdd.setOnClickListener {
+                    val intent = Intent(this@MainActivity, AddRepoActivity::class.java)
+                    startActivity(intent)
+                }
+                binding.rvFavGithubRepo.visibility = View.GONE
+            } else{
+                binding.tvLabel.visibility = View.GONE
+                binding.btnAdd.visibility = View.GONE
+                binding.rvFavGithubRepo.visibility = View.VISIBLE
+                favGithubRepoAdapter.setData(it as ArrayList<TrackFavGithubRepoResponse>)
+            }
+
         })
+    }
+
+    override fun onBackPressed() {
+        ActivityCompat.finishAffinity(this)
     }
 
 }

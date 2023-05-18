@@ -24,7 +24,7 @@ class TrackFavGithubRepoViewModel @Inject constructor(private val trackFavGithub
     }
 
     // This function is used to insert data in room database
-    fun insert(context: Context, trackFavGithubRepoDTO: TrackFavGithubRepoDTOResponse){
+    fun insert(context: Context, trackFavGithubRepoDTO: TrackFavGithubRepoDTOResponse) {
         val result = TrackFavGithubRepoResponse(
             id = trackFavGithubRepoDTO.id,
             html_url = trackFavGithubRepoDTO.html_url,
@@ -37,7 +37,7 @@ class TrackFavGithubRepoViewModel @Inject constructor(private val trackFavGithub
     }
 
     // This function is used to retrieve data from room database
-    fun getAllFavGithubRepoData(context: Context) : LiveData<List<TrackFavGithubRepoResponse>>? {
+    fun getAllFavGithubRepoData(context: Context): LiveData<List<TrackFavGithubRepoResponse>>? {
         return TrackFavGithubRepoRepository.getAllFavGithubRepoData(context)
     }
 

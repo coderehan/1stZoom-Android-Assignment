@@ -1,8 +1,10 @@
 package com.rehan.trackfavgithubrepo.di
 
 import com.rehan.trackfavgithubrepo.api.TrackFavGithubRepoAPI
+import com.rehan.trackfavgithubrepo.dao.TrackFavGithubRepoDAO
 import com.rehan.trackfavgithubrepo.repositories.TrackFavGithubRepoRepository
 import com.rehan.trackfavgithubrepo.utils.Constants
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -35,5 +37,7 @@ object HiltModules {
     fun providesTrackFavGithubRepository(trackFavGithubRepoAPI: TrackFavGithubRepoAPI): TrackFavGithubRepoRepository {
         return TrackFavGithubRepoRepository(trackFavGithubRepoAPI)
     }
+
+
 
 }
