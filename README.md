@@ -18,7 +18,8 @@ This app is built in <b>Kotlin</b> with <b>MVVM</b> architecture design pattern 
 7. Coroutines
 8. Data Binding
 9. Google Material Design
-10. Loading Animation
+10. Room Database (Offline Support)
+11. Loading Animation
 
 <b>UI Screenshots:</b>
 
