@@ -24,5 +24,5 @@ This app is built in <b>Kotlin</b> with <b>MVVM</b> architecture design pattern 
 <b>UI Screenshots:</b>
 
 
-<img src="https://user-images.githubusercontent.com/75351694/0633900b-5adf-49e4-9b2a-5f3caf153d62.jpg" width=30% height=30%> <img src="https://user-images.githubusercontent.com/75351694/739797de-f095-424a-a66e-b519906e3079.jpg" width=30% height=30%>
+<img src="https://github.com/coderehan/1stZoom-Android-Assignment/assets/75351694/0633900b-5adf-49e4-9b2a-5f3caf153d62.jpg" width=30% height=30%> <img src="https://user-images.githubusercontent.com/75351694/739797de-f095-424a-a66e-b519906e3079.jpg" width=30% height=30%>
 <img src="https://user-images.githubusercontent.com/75351694/37c24c68-5db1-4727-8905-ce9302802595.jpg" width=30% height=30%> 
