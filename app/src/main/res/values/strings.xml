@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Track Fav Github Repo</string>
+    <string name="add">Add</string>
+    <string name="track_your_favourite_github_repository">Track Your Favourite Github Repository</string>
+    <string name="add_now">Add Now</string>
+    <string name="repository_name">Repository Name</string>
+    <string name="repository_description">Repository Description</string>
+    <string name="repository_owner_name">Repository Owner Name</string>
+    <string name="add_repo">Add Repository</string>
+    <string name="repo_owner_name_required">Repo Owner Name Required</string>
+    <string name="repo_name_required">Repo Name Required</string>
+    <string name="repo_added_successfully">Repository Added Successfully</string>
+</resources>
