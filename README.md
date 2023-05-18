@@ -6,7 +6,7 @@ Create an android app where the user can track his favourite github repositories
 
 <b>About App:</b>
 
-This app is built in <b>Kotlin</b> with <b>MVVM</b> architecture design pattern along with Coroutines and Dependency Injection. 
+This app is built in <b>Kotlin</b> with <b>MVVM</b> architecture design pattern along with Coroutines, Dependency Injection and Room Database. 
 
 <b>Libraries used:</b>
 1. ViewModel
